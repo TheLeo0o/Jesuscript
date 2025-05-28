@@ -1,0 +1,12 @@
+body {
+    background-color: rgba(60, 7, 83, 0.454);/*Isso aqui é opcional ok */
+}
+section{
+    background-color: aqua;
+    text-align: center;
+    margin: 10vw 30vw;
+}
+section h1,p{
+    color: rgb(0, 0, 0);
+    font-style: bold;
+}
