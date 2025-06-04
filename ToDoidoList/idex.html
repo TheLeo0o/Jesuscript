@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twodoido List</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+    <script>
+        let button = document.querySelector("button");
+        button.addEventListener("click", function(evt){
+            evt.preventDefault();
+            let campo = document.querySelector("input");
+            let lista = document.querySelector("#lista");
+            let item = document.querySelector("li");
+            item.innerHTML = "span class='texto'>" + campo.value + "</span><span class='remover'>Remover</span><span class='editar'>Editar</span>";
+            lista.appendChild(item);
+            console.log("message");
+        });
+        let lista = document.querySelector("#lista");
+        lista.addEventListener("click", function(evt){
+            let elemento = evt.target;
+            console.log(elemento.className);
+            if (elemento.className == "Remover"){
+                elemento.parentElement.remove();
+            } else if (elemento.className == "editar"){
+                elemento.parentElement.querySelector(".texto").contentEditable = true;
+                elemento.parentElement.querySelector('.texto').focus();
+            }
+        });
+    </script>
+</body>
+</html>
